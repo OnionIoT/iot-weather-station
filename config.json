@@ -1,0 +1,10 @@
+{
+    "watson": {
+        "org": "",
+        "type": "",
+        "id": "",
+        "auth-method": "use-token-auth",
+        "auth-token": "",
+        "clean-session": true
+    }
+}
