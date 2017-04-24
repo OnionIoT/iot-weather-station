@@ -3,7 +3,8 @@
 import helpers
 from time import sleep
 
-sleepTime = 5    # seconds
+sleepTime = 5           # seconds
+eventName = "weather"   # the name of the event as registered on the cloud
 
 # main program
 def __main__():
@@ -12,7 +13,8 @@ def __main__():
         weatherData = helpers.getWeatherData()
         
         # send to cloud service
-        helpers.sendToCloud("weather", weatherData)
+        if weatherData is not None:
+            helpers.sendToWatson(eventName, weatherData)
         
         # sleep
         sleep(sleepTime)    

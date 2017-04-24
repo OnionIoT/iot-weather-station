@@ -11,5 +11,5 @@ def getWeatherData():
     response = arduinoDock.sendCommand('r')
     return response
     
-def sendToCloud(eventName, data):
+def sendToWatson(eventName, data):
     watson.publishEvent(eventName, data)
