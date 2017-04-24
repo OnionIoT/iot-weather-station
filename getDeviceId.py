@@ -1,3 +1,0 @@
-import watsonHelper
-
-watsonHelper.getDeviceId()

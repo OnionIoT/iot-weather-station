@@ -2,11 +2,10 @@
 opkg update
 opkg install python
 opkg install python-pip
+opkg install python-pyserial
 
 pip uninstall setuptools
 pip install setuptools
-
-# pip install ibmiotf
 
 pip install iso8601
 pip install xmltodict

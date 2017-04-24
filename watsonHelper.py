@@ -8,15 +8,19 @@ import re
 import ibmiotf
 import ibmiotf.device
 
+# get absolute path of the config file for loading later
 dirName = os.path.dirname(os.path.abspath(__file__))
 defaultConfigFile = '/'.join([dirName, 'device.cfg'])
 
+# retrieve and format the mac address, then load it into the config file
 def getDeviceId():
     # get mac address
     macAddress = hex(uuid.getnode())[2:-1]
     macAddress = format(long(macAddress, 16),'012x')
+    print "===================="
     print "Device ID:"
     print macAddress
+    print "===================="
     
     # populate device id into device.cfg file
     file = fileinput.FileInput(defaultConfigFile, inplace=True, backup='.bak')
@@ -30,6 +34,7 @@ def getDeviceId():
     print "Don't forget to add your Organization ID, Device Type, and Authorization Token to the device.cfg file!"
     return
 
+# load the device ID when this module is imported or run
 getDeviceId()
 
 class Watson:
