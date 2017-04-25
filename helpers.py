@@ -2,7 +2,6 @@
 
 from arduinoDockHelper import ArduinoDock
 from watsonHelper import Watson
-from configHelper import config
 
 arduinoDock = ArduinoDock()
 watson = Watson()

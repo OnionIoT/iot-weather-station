@@ -34,8 +34,7 @@ def getDeviceId():
     print "Don't forget to add your Organization ID, Device Type, and Authorization Token to the device.cfg file!"
     return
 
-# load the device ID when this module is imported or run
-getDeviceId()
+
 
 class Watson:
     def __init__(self, deviceFile=defaultConfigFile):
@@ -60,3 +59,7 @@ class Watson:
         
         print "Type the above ID into the device.cfg file, where it says id=..."
         return
+
+if __name__ == '__main__':
+    # load the device ID when this module is run directly
+    getDeviceId()
