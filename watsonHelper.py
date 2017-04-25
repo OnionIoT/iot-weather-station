@@ -50,15 +50,6 @@ class Watson:
         msg = {"d": data}
         self.deviceClient.publishEvent(eventName,"json", msg, qos=0)
         print "message published: " + json.dumps(msg)
-        
-    def getDeviceId(self):
-        macAddress = hex(uuid.getnode())[2:-1]
-        macAddress = format(long(macAddress, 16),'012x')
-        print "Device ID:"
-        print macAddress
-        
-        print "Type the above ID into the device.cfg file, where it says id=..."
-        return
 
 if __name__ == '__main__':
     # load the device ID when this module is run directly
